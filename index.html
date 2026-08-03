@@ -10,26 +10,27 @@
 
   <meta
     name="description"
-    content="BLK XOTTON — a clothing brand built through creativity, identity, and purpose."
+    content="BLK XOTTON reconnects culture, history, and identity through cotton, clothing, and storytelling."
   >
 
-  <title>BLK XOTTON™ | Coming Soon</title>
+  <title>BLK XOTTON™ | Every Thread Has a History</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   >
 
   <style>
     :root {
-      --black: #080808;
+      --black: #090909;
       --soft-black: #111111;
-      --white: #f7f7f3;
-      --gray: #b7b7b2;
-      --border: rgba(255, 255, 255, 0.18);
+      --cream: #f0ece2;
+      --white: #faf9f5;
+      --gray: #b8b5ae;
+      --line: rgba(240, 236, 226, 0.18);
     }
 
     * {
@@ -43,15 +44,26 @@
     }
 
     body {
-      min-height: 100vh;
-      background:
-        radial-gradient(
-          circle at center,
-          #1a1a1a 0%,
-          var(--black) 62%
-        );
+      background: var(--black);
       color: var(--white);
       font-family: "Montserrat", sans-serif;
+      line-height: 1.7;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 3px,
+          rgba(255, 255, 255, 0.12) 4px
+        );
+      z-index: 100;
     }
 
     a {
@@ -59,173 +71,325 @@
       text-decoration: none;
     }
 
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding: 28px 6%;
+      min-height: 88px;
+      padding: 20px 6%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var(--border);
+      justify-content: space-between;
+      background: rgba(9, 9, 9, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      z-index: 50;
     }
 
     /*
-      This is the temporary wordmark.
+      Temporary text logo.
 
-      Later, we will replace this section with the complete
-      cotton-ball logo + BLK XOTTON + trademark symbol
-      as one properly aligned logo image.
+      The finished cotton emblem and wordmark will replace this.
+      The trademark sits at the top-right of the whole lockup.
     */
 
     .brand-lockup {
-      display: inline-flex;
-      align-items: flex-start;
       position: relative;
+      display: inline-flex;
+      padding-right: 16px;
+      padding-top: 5px;
     }
 
     .brand-name {
       font-family: "Archivo Black", sans-serif;
-      font-size: clamp(1rem, 2vw, 1.4rem);
-      letter-spacing: 0.16em;
+      font-size: 1rem;
+      letter-spacing: 0.18em;
       line-height: 1;
-      white-space: nowrap;
     }
 
     .trademark {
-      font-size: 0.48em;
-      margin-left: 4px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 0.48rem;
       line-height: 1;
-      transform: translateY(-2px);
     }
 
-    .status {
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
       color: var(--gray);
-      font-size: 0.68rem;
-      font-weight: 500;
+      font-size: 0.65rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
+      transition: color 0.3s ease;
     }
 
-    main {
-      flex: 1;
-      min-height: calc(100vh - 160px);
-      padding: 80px 6%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
+    nav a:hover {
+      color: var(--white);
+    }
+
+    section {
+      padding: 120px 8%;
     }
 
     .hero {
-      width: min(950px, 100%);
+      min-height: 100vh;
+      padding-top: 170px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      width: min(1000px, 100%);
       position: relative;
       z-index: 2;
     }
 
     .eyebrow {
+      margin-bottom: 28px;
       color: var(--gray);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 500;
       letter-spacing: 0.35em;
       text-transform: uppercase;
-      margin-bottom: 30px;
     }
 
     h1 {
-      font-family: "Archivo Black", sans-serif;
-      font-size: clamp(3rem, 10vw, 8rem);
-      line-height: 0.9;
-      letter-spacing: -0.04em;
-      text-transform: uppercase;
-      margin-bottom: 34px;
+      max-width: 1050px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(4rem, 10vw, 9rem);
+      font-weight: 500;
+      line-height: 0.88;
+      letter-spacing: -0.045em;
     }
 
-    .outlined {
-      color: transparent;
-      -webkit-text-stroke: 1px var(--white);
-      text-stroke: 1px var(--white);
-    }
-
-    .message {
-      max-width: 650px;
-      margin: 0 auto;
+    .hero-description {
+      max-width: 680px;
+      margin-top: 42px;
       color: var(--gray);
-      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      font-size: clamp(1rem, 2vw, 1.15rem);
       font-weight: 300;
-      line-height: 1.9;
     }
 
-    .divider {
-      width: 80px;
-      height: 1px;
-      background: var(--white);
-      margin: 40px auto;
+    .hero-actions {
+      margin-top: 45px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
     }
 
-    .coming-soon {
+    .primary-button {
       display: inline-block;
-      border: 1px solid var(--white);
-      padding: 15px 28px;
-      font-size: 0.72rem;
+      padding: 16px 28px;
+      border: 1px solid var(--cream);
+      color: var(--cream);
+      font-size: 0.68rem;
       font-weight: 600;
-      letter-spacing: 0.26em;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
+    }
+
+    .primary-button:hover {
+      background: var(--cream);
+      color: var(--black);
+    }
+
+    .release-note {
+      color: var(--gray);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
-    .background-text {
+    .hero-symbol {
       position: absolute;
-      left: 50%;
-      bottom: -6vw;
-      transform: translateX(-50%);
-      font-family: "Archivo Black", sans-serif;
-      font-size: clamp(7rem, 22vw, 22rem);
+      right: -4vw;
+      bottom: -8vw;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(15rem, 38vw, 38rem);
+      font-weight: 600;
       line-height: 1;
       color: rgba(255, 255, 255, 0.018);
-      white-space: nowrap;
       pointer-events: none;
       user-select: none;
     }
 
-    footer {
-      padding: 24px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      border-top: 1px solid var(--border);
-      color: var(--gray);
-      font-size: 0.66rem;
-      letter-spacing: 0.12em;
+    .story {
+      background: var(--cream);
+      color: var(--black);
+    }
+
+    .section-label {
+      margin-bottom: 24px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
     }
 
-    @media (max-width: 650px) {
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 10vw;
+      align-items: start;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 500;
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+    }
+
+    .story-copy {
+      padding-top: 15px;
+    }
+
+    .story-copy p {
+      margin-bottom: 26px;
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .pillars {
+      border-top: 1px solid rgba(9, 9, 9, 0.25);
+    }
+
+    .pillar {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 24px;
+      padding: 32px 0;
+      border-bottom: 1px solid rgba(9, 9, 9, 0.25);
+    }
+
+    .pillar-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.5rem;
+    }
+
+    .pillar h3 {
+      margin-bottom: 8px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .pillar p {
+      color: #4d4b46;
+    }
+
+    .experience {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .experience-content {
+      max-width: 900px;
+    }
+
+    .experience h2 {
+      margin-bottom: 30px;
+    }
+
+    .experience p {
+      max-width: 680px;
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .barcode-note {
+      margin-top: 42px;
+      padding: 30px 0;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 40px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .barcode-visual {
+      height: 90px;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          var(--cream) 0,
+          var(--cream) 2px,
+          transparent 2px,
+          transparent 6px,
+          var(--cream) 6px,
+          var(--cream) 10px,
+          transparent 10px,
+          transparent 14px
+        );
+      opacity: 0.75;
+    }
+
+    .barcode-note h3 {
+      margin-bottom: 10px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    footer {
+      padding: 30px 6%;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--gray);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 800px) {
       header {
-        padding: 22px 5%;
+        min-height: 76px;
+        padding: 18px 5%;
       }
 
-      .status {
-        font-size: 0.56rem;
-        letter-spacing: 0.12em;
+      nav {
+        display: none;
       }
 
-      main {
-        padding: 70px 7%;
+      section {
+        padding: 90px 7%;
       }
 
-      h1 {
-        line-height: 0.95;
+      .hero {
+        padding-top: 140px;
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .barcode-note {
+        grid-template-columns: 1fr;
+      }
+
+      .barcode-visual {
+        width: 180px;
       }
 
       footer {
-        padding: 22px 5%;
         flex-direction: column;
         text-align: center;
       }
@@ -234,56 +398,187 @@
 </head>
 
 <body>
-  <div class="page">
 
-    <header>
-      <div
-        class="brand-lockup"
-        aria-label="BLK XOTTON trademark"
-      >
-        <span class="brand-name">BLK XOTTON</span>
-        <sup class="trademark">™</sup>
-      </div>
+  <header>
+    <a href="#home" class="brand-lockup">
+      <span class="brand-name">BLK XOTTON</span>
+      <span class="trademark">™</span>
+    </a>
 
-      <p class="status">Est. 2026</p>
-    </header>
+    <nav>
+      <a href="#story">Our Story</a>
+      <a href="#experience">The Experience</a>
+      <a href="#collection">Collection 001</a>
+    </nav>
+  </header>
 
-    <main>
-      <section class="hero">
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
 
         <p class="eyebrow">
-          The first collection is taking shape
+          Culture preserved through cloth
         </p>
 
         <h1>
-          Built With<br>
-          <span class="outlined">Purpose.</span>
+          Every Thread<br>
+          Has a History.
         </h1>
 
-        <p class="message">
-          BLK XOTTON is creating something original at the
-          intersection of identity, culture, and design.
-          Our first collection is currently in development.
+        <p class="hero-description">
+          BLK XOTTON reconnects culture, history, and identity
+          through one of the world's most influential natural fibers.
+          The garment begins the conversation. The story carries it forward.
         </p>
 
-        <div class="divider"></div>
+        <div class="hero-actions">
+          <a href="#story" class="primary-button">
+            Begin the Story
+          </a>
 
-        <p class="coming-soon">
-          Coming Soon
-        </p>
+          <span class="release-note">
+            Collection 001 — Coming Soon
+          </span>
+        </div>
 
-      </section>
-
-      <div class="background-text" aria-hidden="true">
-        XOTTON
       </div>
-    </main>
 
-    <footer>
-      <span>BLK XOTTON™</span>
-      <span>All Rights Reserved</span>
-    </footer>
+      <div class="hero-symbol" aria-hidden="true">
+        X
+      </div>
+    </section>
 
-  </div>
+    <section class="story" id="story">
+      <p class="section-label">Our Foundation</p>
+
+      <div class="story-grid">
+
+        <div>
+          <h2>
+            More Than<br>
+            a Garment.
+          </h2>
+        </div>
+
+        <div class="story-copy">
+          <p>
+            Cotton carries a history that reaches far beyond fabric.
+            Its story is tied to land, labor, ancestry, survival,
+            innovation, and the shaping of culture.
+          </p>
+
+          <p>
+            BLK XOTTON uses clothing as a doorway into that history.
+            Every piece is designed to invite reflection, preserve
+            knowledge, and connect the past to the present.
+          </p>
+
+          <div class="pillars">
+
+            <div class="pillar">
+              <span class="pillar-number">01</span>
+
+              <div>
+                <h3>History</h3>
+                <p>
+                  Understanding cotton's role in the movement,
+                  labor, and experiences of generations.
+                </p>
+              </div>
+            </div>
+
+            <div class="pillar">
+              <span class="pillar-number">02</span>
+
+              <div>
+                <h3>Culture</h3>
+                <p>
+                  Honoring the people, creativity, and identity
+                  woven through the story of the material.
+                </p>
+              </div>
+            </div>
+
+            <div class="pillar">
+              <span class="pillar-number">03</span>
+
+              <div>
+                <h3>Connection</h3>
+                <p>
+                  Creating garments that connect what we wear
+                  with what we know and remember.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="experience-content">
+
+        <p class="section-label">The Experience</p>
+
+        <h2>
+          The Story Travels<br>
+          With the Shirt.
+        </h2>
+
+        <p>
+          Each garment will include a scannable code that opens a deeper
+          educational experience. Wearers will be able to explore the history
+          of cotton, its cultural significance, its relationship to the body,
+          and the stories connected to every collection.
+        </p>
+
+        <div class="barcode-note">
+
+          <div class="barcode-visual" aria-hidden="true"></div>
+
+          <div>
+            <h3>Scan. Learn. Carry It Forward.</h3>
+
+            <p>
+              The clothing is not the end of the story.
+              It is where the conversation begins.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="experience" id="collection">
+      <div class="experience-content">
+
+        <p class="section-label">Collection 001</p>
+
+        <h2>
+          Currently<br>
+          Taking Shape.
+        </h2>
+
+        <p>
+          Our first collection is in development.
+          Every detail is being created with intention,
+          from the garment to the history connected to it.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>BLK XOTTON™</span>
+    <span>Every Thread Has a History</span>
+    <span>All Rights Reserved</span>
+  </footer>
+
 </body>
 </html>
